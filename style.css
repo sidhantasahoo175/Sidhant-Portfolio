@@ -1,0 +1,695 @@
+/* GENERAL */
+* {margin:0; padding:0; box-sizing:border-box; font-family:"Poppins", sans-serif;}
+body {background:rgb(2, 2, 33); color:#fff; scroll-behavior:smooth;}
+a {text-decoration:none; color:#00bfff;}
+a:hover {color:#33ccff;}
+html{scroll-behavior:smooth;}
+
+/* HEADER */
+header {position:fixed; top:0; width:100%; background:rgb(18,18,60); padding:15px 10%; z-index:1000;}
+nav {display:flex; justify-content:space-between; align-items:center;}
+.logo {font-weight:700; font-size:1.3rem; color:#00bfff;}
+.menu-toggle {display:none; font-size:1.5rem; cursor:pointer; color:#00bfff;}
+.nav-links {display:flex; list-style:none; transition:0.3s;}
+.nav-links li {margin-left:20px;}
+.nav-links a {font-weight:500; color:#c5c6c7; transition:0.3s;}
+.nav-links a:hover {color:#00bfff;}
+
+/* MOBILE SIDE DRAWER */
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-140px;
+    width:140px;
+    height:100vh;
+    background: transparent;
+    flex-direction:column;
+    padding-top:60px;
+    transition: right 0.5s ease;
+    z-index:999;
+  }
+/* ===== CENTER HERO BUTTONS ON MOBILE ===== */
+@media (max-width: 768px) {
+  .hero .buttons {
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    margin-top: 20px;          /* optional spacing */
+  }
+
+  .hero .buttons .btn {
+    margin-right: 10px;        /* spacing between buttons */
+  }
+}
+
+
+  .nav-links li{margin:25px 0; text-align:center;}
+  .nav-links.active{right:0;}
+}
+
+/* HERO */
+.hero {display:flex; justify-content:space-between; align-items:center; padding-bottom:60px; flex-wrap:wrap;}
+.hero-content {flex:1; min-width:280px;}
+.hero-content h1 {font-size:2.5rem; margin-bottom:10px; color:#00bfff;}
+.hero-content h2 {font-size:1.5rem; margin-bottom:15px; color:#33ccff;}
+.hero-content p {margin-bottom:20px; color:#c5c6c7;}
+.buttons .btn {display:inline-block; margin-right:10px; padding:10px 20px; background:#00bfff; color:#0b0c10; border-radius:5px; border:2px solid whitesmoke; font-weight:600; transition:0.3s;}
+.buttons .btn:hover {background:#33ccff; color:#0b0c10; transform:scale(0.9);}
+.hero-image {flex:1; text-align:right;}
+.hero-image img {width:300px; height:300px; border-radius:50%; border:4px solid #00bfff; box-shadow:0 0 20px #00bfff; transition:0.4s;}
+.hero-image img:hover {transform:scale(1.15);}
+
+/* SECTIONS */
+.section {padding:135px 10%; opacity:0; transform:translateY(40px); transition:all 0.8s ease;}
+.section.active {opacity:1; transform:translateY(0);}
+.section h2 {font-size:2rem; margin-bottom:30px; color:#33ccff;}
+
+/* hr */
+hr {border:none; background-color:rgb(108,108,217); height:1px; margin:40px auto 20px; width:80%;}
+
+/* LINE BOXES */
+.line-box {display:flex; justify-content:space-between; background:oklab(0.39 0.02 -0.04 / 0.29); padding:40px 20px; margin-bottom:15px; border-left:4px solid #00bfff;}
+.line-box .title {font-weight:600; color:#00bfff;}
+.line-box .details {color:#c5c6c7;}
+.line-box a {color:#00bfff;}
+.line-box a:hover {color:#33ccff;}
+
+/* CONTACT */
+.contact .btn {margin-top:10px;}
+
+/* FOOTER */
+footer {text-align:center; padding:20px; color:#c5c6c7;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero {flex-direction:column; text-align:center;}
+  .hero-image {text-align:center; margin-top:30px;}
+  .line-box {flex-direction:column; align-items:flex-start;}
+  .line-box .details {margin-top:5px;}
+}
+
+/* ===== Skills Section (Updated Clean Version) ===== */
+.skills-section {
+  background-color: #0b0b24;
+  color: white;
+  text-align: center;
+  padding: 180px;
+}
+
+.skills-section h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+  color: #33ccff;
+}
+
+.skills-intro {
+  font-size: 1rem;
+  color: #bfbfbf;
+  margin-bottom: 50px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* ✅ Cards made wider and equal size */
+.skills-category {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 35px 30px;
+  width: 350px; /* CHANGED: increased width */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 350px; /* ensures equal card width */
+  min-height: 500px; /* CHANGED: ensures equal height */
+}
+
+.skills-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #33ccff;
+}
+
+.skills-category h3,
+ .sub-section h4{
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #33ccff;
+  display: inline-block;
+  padding-bottom: 5px;
+  font-weight: 600;
+}
+
+/* ✅ Added for sub-sections inside combined cards */
+.sub-section {
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 25px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+.skill-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.skill-item p {
+  font-size: 0.85rem;
+  color: #dcdcdc;
+}
+
+@media (max-width: 1024px) {
+  .skills-category {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skills-category {
+    width: 80%;
+  }
+}
+
+
+
+
+
+
+
+
+/* ✅ NEWLY ADDED CSS FOR JAVA FULL STACK INTERNSHIP CARD */
+.java-intern { flex-direction: column; align-items: flex-start; padding: 40px 25px; }
+.intern-header { display: flex; justify-content: space-between; width: 100%; flex-wrap: wrap; }
+.intern-title { color: #00bfff; font-weight: 600; font-size: 1.2rem; }
+.intern-company { color: #ffffff; font-weight: 500; font-size: 1rem; }
+.intern-description { color: #c5c6c7; margin-top: 10px; line-height: 1.5; font-size: 1rem; }
+
+/* internships */
+.intern { display: flex; flex-direction: column; justify-content: space-between; background: oklab(0.39 0.02 -0.04 / 0.29); padding: 40px 20px; margin-bottom: 15px; border-left: 4px solid #00bfff; border-radius: 8px; transition: all 0.3s ease; opacity: 1 !important; transform: none !important; }
+
+/* Hover glow */
+#internships .intern:hover { box-shadow: 0 0 15px #00bfff; transform: scale(1.02); }
+
+@media (max-width: 768px) {
+  .intern { padding: 30px 15px; }
+  .intern-header { flex-direction: column; align-items: flex-start; }
+  .intern-company { margin-top: 5px; }
+}
+
+/* ✅ PROJECT CARDS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✔️ Changed from 3 to 2 for wide layout */
+  gap: 30px; /* ✔️ Increased spacing */
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.project-card {
+  background: oklab(0.39 0.02 -0.04 / 0.29); /* ✔️ Darker card for screenshot look */
+  border: 1px solid #1e293b; /* ✔️ Subtle border */
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 460px; /* ✔️ Wider cards */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* ✔️ Lift instead of scale */
+  box-shadow: 0 0 20px #00bfff;
+}
+
+.project-card img {
+  width: 100%;
+  height: 250px; /* ✔️ Adjusted for screenshot proportion */
+  object-fit: cover; /* ✔️ Ensures clean image fit */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.project-desc { /* ✔️ Added description style */
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.tags { /* ✔️ Added tags (like React, Tailwind, etc.) */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tags span {
+  background: #1e293b;
+  color: #00bfff;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.btn {
+  padding: 10px 18px;
+  background: #00bfff;
+  color: #0b0c10;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #33ccff;
+  transform: scale(0.95);
+}
+
+.code-btn { /* ✔️ Added for secondary (Code) button look */
+  background: transparent;
+  color: #00bfff;
+  border: 1px solid #00bfff;
+}
+
+.code-btn:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card {
+    width: 90%;
+  }
+}
+
+/* CERTIFICATIONS */
+/* Certifications Section */
+.certifications-section {
+  margin: 80px 0;
+  /* background-color: #1a1a1a; */
+  color: #fff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+/* Responsive Grid */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 768px) {
+  .cert-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Container box */
+.cert-container {
+  background-color: oklab(38.188% 0.01991 -0.0398 / 0.29);
+  border-left: 3px solid #00bfff;
+  border-radius: 12px;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 25px 30px;
+  /* box-shadow: 0 0 25px rgba(0, 255, 128, 0.15); */
+  position: relative;
+  overflow: hidden;
+}
+.cert-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Subtle glowing effect */
+.cert-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -3px;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, #00ff80, #00ffaa, #00ff80);
+  box-shadow: 0 0 20px #00ff80, 0 0 40px #00ffaa;
+  animation: glowLine 3s linear infinite;
+}
+
+@keyframes glowLine {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+/* Individual certification items */
+.cert-item {
+  margin-bottom: 1.8rem;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.cert-item:last-child {
+  margin-bottom: 0;
+}
+
+.cert-name {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #eaeaea;
+}
+
+.cert-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.cert-link {
+  color: #7a6efb;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.cert-link::after {
+  content: "🔗";
+  opacity: 0;
+  transform: translateX(-5px);
+  position: absolute;
+  right: -22px;
+  transition: all 0.3s ease;
+}
+.cert-link:hover {
+  color: #a291ff;
+  text-shadow: 0 0 8px #7a6efb;
+}
+/* .cert-link:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+} */
+
+.cert-year {
+  background-color: #7a6efb;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* Optional fade-in animation on scroll */
+.cert-container {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.7s ease;
+}
+.cert-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ✅ TWO COLUMN CERTIFICATION LAYOUT */
+.cert-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cert-item {
+  background: oklab(0.39 0.02 -0.04 / 0.29);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #00bfff;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00bfff;
+}
+
+@media (max-width: 768px) {
+  .cert-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* CONTACT SECTION FORM */
+/* ✅ CONTACT SECTION MODERN STYLE */
+.contact {
+  text-align: center;
+}
+
+.contact-intro {
+  color: #c5c6c7;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ✅ LEFT INFO SIDE */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.contact-info h3 {
+  color: #00bfff;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  color: #c5c6c7;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+/* ✅ SOCIAL ICONS STYLE */
+.social-icons {
+  display: flex;
+  /* justify-content: center;  ✅ Centers icons horizontally */
+  /* align-items: center; */
+  gap: 18px;
+  margin: 15px 0 20px;
+}
+
+.social-icon {
+  width: 30px;
+  height: 32px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3);
+}
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px #00bfff);
+}
+
+.icon {
+  width: 22px;        /* adjust as needed */
+  height: 22px;
+  margin-right: 10px;
+  vertical-align: middle;
+  object-fit: contain; /* keeps correct aspect ratio */
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.info-item .icon {
+  font-size: 1.4rem;
+  margin-right: 10px;
+  color: #00bfff;
+}
+
+.info-item a {
+  color: #33ccff;
+}
+
+/* ✅ RIGHT FORM SIDE */
+.contact-form {
+  flex: 1;
+  min-width: 320px;
+  background: oklab(0.39 0.02 -0.04 / 0.29);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #00bfff;
+  background: rgba(255,255,255,0.15);
+}
+
+.send-btn {
+  align-self: flex-start;
+  background: #00bfff;
+  color: #0b0c10;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: 1px solid #fff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.send-btn:hover {
+  background: #33ccff;
+  transform: scale(0.95);
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .contact-container {
+display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .contact-info {
+    flex: 1;
+    margin-right: 40px; /* ✅ added spacing between left & right boxes */
+  }
+  .contact-form {
+    flex: 1;
+  }
+}
+.contact-form:hover {
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+  border-color: rgba(0, 191, 255, 0.6);
+.send-btn:hover {
+  box-shadow: 0 0 12px rgba(0, 150, 220, 0.8);
+  transform: scale(0.9);
+}}
+/* ✅ POPUP MESSAGE STYLE */
+.popup-message {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #bafcc4;
+  color: #0a0a0a;
+  font-weight: 600;
+  padding: 12px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.popup-message.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+/* ===== CHANGES START: Main Section Headings Color, Center & Underline ===== */
+
+/* Select all main section headings including Certifications */
+#projects h2,
+#internships h2,
+#education h2,
+#certifications-section h2 {
+  color: #33ccff;          /* same as Skills heading */
+  text-align: center;      /* center heading */
+  margin-bottom: 30px;     /* uniform spacing like Skills */
+  position: relative;      /* for underline positioning */
+}
+
+/* ===== MAIN SECTION HEADINGS COLOR & CENTER ===== */
+
+/* Targets Projects, Internships, Education headings */
+#projects h2,
+#internships h2,
+#education h2,
+.certifications-section .section-title { /* fixes Certifications heading */
+  color: #33ccff;      /* same as Skills heading */
+  text-align: center;  /* center heading */
+}

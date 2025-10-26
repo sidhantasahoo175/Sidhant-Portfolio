@@ -21,26 +21,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 // ====== CONTACT FORM POPUP ====== //
+
 const form = document.querySelector(".contact-form form");
-const popup = document.getElementById("popup-message");
-
-if (form && popup) {
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        // ✅ Show popup with tick mark
-        popup.innerHTML = `<span>✅ Message sent! Thanks, I’ll get back to you soon.</span>`;
-        popup.classList.add("show");
-
-        // ✅ Hide popup after 3 seconds
-        setTimeout(() => {
-            popup.classList.remove("show");
-        }, 3000);
-
-        // ✅ Optional: clear form fields
-        form.reset();
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { Accept: "application/json" },
     });
-}
+    if (response.ok) {
+        alert("✅ Message sent successfully!");
+        form.reset();
+    } else {
+        alert("❌ There was a problem sending your message. Please try again later.");
+    }
+});
 // Fade-in animation when section appears
 window.addEventListener("scroll", () => {
     const certSection = document.querySelector(".cert-container");
@@ -49,6 +46,19 @@ window.addEventListener("scroll", () => {
         certSection.classList.add("show");
     }
 });
+
+// ================== HIRE ME BUTTON SMOOTH SCROLL ==================
+document.addEventListener("DOMContentLoaded", () => {
+    const hireBtn = document.querySelector(".hire-btn");
+    hireBtn?.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector("#contact").scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
+
+
 
 
 

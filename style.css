@@ -7,7 +7,7 @@ html{scroll-behavior:smooth;}
 
 /* HEADER */
 header {position:fixed; top:0; width:100%; background:rgb(18,18,60); padding:15px 10%; z-index:1000;}
-nav {display:flex; justify-content:space-between; align-items:center;}
+nav {display:flex; justify-content:space-between; align-items:center; padding: 3px 10%;}
 .logo {font-weight:700; font-size:1.3rem; color:#00bfff;}
 .menu-toggle {display:none; font-size:1.5rem; cursor:pointer; color:#00bfff;}
 .nav-links {display:flex; list-style:none; transition:0.3s;}
@@ -49,24 +49,36 @@ nav {display:flex; justify-content:space-between; align-items:center;}
 }
 
 /* HERO */
-.hero {display:flex; justify-content:space-between; align-items:center; padding-bottom:60px; flex-wrap:wrap;}
+.hero {display:flex; justify-content:center; align-items:center; min-height:100vh;  padding: 0 10%; box-sizing:border-box;}
 .hero-content {flex:1; min-width:280px;}
 .hero-content h1 {font-size:2.5rem; margin-bottom:10px; color:#00bfff;}
 .hero-content h2 {font-size:1.5rem; margin-bottom:15px; color:#33ccff;}
 .hero-content p {margin-bottom:20px; color:#c5c6c7;}
-.buttons .btn {display:inline-block; margin-right:10px; padding:10px 20px; background:#00bfff; color:#0b0c10; border-radius:5px; border:2px solid whitesmoke; font-weight:600; transition:0.3s;}
-.buttons .btn:hover {background:#33ccff; color:#0b0c10; transform:scale(0.9);}
+.buttons .btn {display:inline-block;
+   margin-right:10px; 
+   padding:10px 20px; 
+  background:#00bfff; 
+  color:#0b0c10; 
+  border-radius:5px;
+   border:2px solid
+   whitesmoke; 
+   font-weight:600; 
+   transition:0.3s;}
+.buttons .btn:hover {background:#33ccff; 
+  color:#0b0c10; 
+  transform:scale(0.9);}
+
 .hero-image {flex:1; text-align:right;}
 .hero-image img {width:300px; height:300px; border-radius:50%; border:4px solid #00bfff; box-shadow:0 0 20px #00bfff; transition:0.4s;}
 .hero-image img:hover {transform:scale(1.15);}
 
 /* SECTIONS */
-.section {padding:135px 10%; opacity:0; transform:translateY(40px); transition:all 0.8s ease;}
+.section {padding:90px 10%; opacity:0; transform:translateY(40px); transition:all 0.8s ease;}
 .section.active {opacity:1; transform:translateY(0);}
 .section h2 {font-size:2rem; margin-bottom:30px; color:#33ccff;}
 
 /* hr */
-hr {border:none; background-color:rgb(108,108,217); height:1px; margin:40px auto 20px; width:80%;}
+hr {border:none; background-color:rgb(108,108,217); height:1px; margin:10px auto; width:80%;}
 
 /* LINE BOXES */
 .line-box {display:flex; justify-content:space-between; background:oklab(0.39 0.02 -0.04 / 0.29); padding:40px 20px; margin-bottom:15px; border-left:4px solid #00bfff;}
@@ -89,12 +101,154 @@ footer {text-align:center; padding:20px; color:#c5c6c7;}
   .line-box .details {margin-top:5px;}
 }
 
+
+
+/* ================== ABOUT SECTION ================== */
+.about-section {
+  padding: 90px 10%;
+  background-color: rgb(2, 2, 33);
+  color: #fff;
+}
+
+.about-section .section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #33ccff;
+  margin-bottom: 50px;
+}
+
+.about-section .section-title span {
+  color: #33ccff;
+  /* text-decoration: underline; */
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* ---------- Image Box ---------- */
+.about-img .img-box {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #00bfff, #c084fc);
+  padding: 5px;
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+  transition: 0.4s;
+}
+
+.about-img .img-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  display: block;
+  
+}
+
+.about-img .img-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 25px #00bfff;
+}
+
+/* ---------- About Content ---------- */
+.about-content {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-content h3 {
+  font-size: 1.8rem;
+  color: #00bfff;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.about-goal {
+  font-style: italic;
+  color: #bbb;
+}
+
+/* ================== FIXED HIRE ME BUTTON STYLE ================== */
+/* 🔽 REPLACE your old .hire-btn styles with this block */
+.hire-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #00bfff, #c084fc);
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* 🔽 Adds gradient slide animation (like your other buttons) */
+.hire-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #c084fc, #00bfff);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+/* 🔽 Hover effect: smooth gradient slide + glow */
+.hire-btn:hover::before {
+  left: 0;
+}
+
+.hire-btn:hover {
+  color: #fff; /* keeps "Hire Me" text visible on hover */
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+}
+/* ================== END FIXED HIRE ME BUTTON STYLE ================== */
+
+
+
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+}
+
+
+
+
+
+
 /* ===== Skills Section (Updated Clean Version) ===== */
 .skills-section {
   background-color: #0b0b24;
   color: white;
   text-align: center;
-  padding: 180px;
+  padding: 90px 10%;
 }
 
 .skills-section h2 {
@@ -329,7 +483,7 @@ footer {text-align:center; padding:20px; color:#c5c6c7;}
 /* CERTIFICATIONS */
 /* Certifications Section */
 .certifications-section {
-  margin: 80px 0;
+  margin: 60px 0;
   /* background-color: #1a1a1a; */
   color: #fff;
   text-align: center;
@@ -488,12 +642,58 @@ footer {text-align:center; padding:20px; color:#c5c6c7;}
   }
 }
 
+/* ================= EDUCATION SECTION ================= */
+/* #education {
+  text-align: center;
+  color: #fff;
+  padding: 100px 10%;
+}
+
+#education h2 {
+  font-size: 2.2rem;
+  color: #33ccff;
+  margin-bottom: 40px;
+}
+
+/*  Line-box styling (acts like card) */
+.line-box {
+  background: oklab(0.39 0.02 -0.04 / 0.29);
+  border-left: 4px solid #00bfff;
+  border-radius: 12px;
+  padding: 50px 30px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+ 
+  gap: 8px; 
+}
+
+/*  Hover glow effect like other cards */
+.line-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #00bfff;
+}
+
+/*  Text styling inside education boxes */
+.line-box .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00bfff;
+}
+
+.line-box .details {
+  font-size: 1rem;
+  color: #c5c6c7;
+} 
+
+
 
 
 /* CONTACT SECTION FORM */
-/* ✅ CONTACT SECTION MODERN STYLE */
+
 .contact {
   text-align: center;
+  padding:90px 10%;
 }
 
 .contact-intro {
